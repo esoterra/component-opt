@@ -1,0 +1,35 @@
+[package]
+name = "component-opt"
+description = "A simple optimizer for Wasm components"
+readme = "README.md"
+version = "0.1.0"
+authors = ["Robin Brown"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+homepage = "https://github.com/esoterra/component-opt"
+repository = "https://github.com/esoterra/component-opt"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+clap = { version = "4.5.1", features = ["derive"] }
+wasmprinter = "0.2.75"
+wasm-opt = "0.116.0"
+thiserror = "1.0.57"
+wasmparser = "0.200.0"
+wasm-encoder = "0.200.0"
+
+[dependencies.uuid]
+version = "1.7.0"
+features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+]
+
+[dev-dependencies]
+wasmtime = { version = "15.0.0", features = ["component-model"]}
+compile-claw = "0.2.1"

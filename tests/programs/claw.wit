@@ -1,0 +1,50 @@
+package claw:samples;
+
+world arithmetic {
+    export test-u8-masking: func() -> bool;
+}
+
+world compare {
+    export min-u32: func(left: u32, right: u32) -> u32;
+    export max-u32: func(left: u32, right: u32) -> u32;
+    export min-u64: func(left: u64, right: u64) -> u64;
+    export max-u64: func(left: u64, right: u64) -> u64;
+}
+
+world counter {
+    export increment-s32: func() -> s32;
+    export decrement-s32: func() -> s32;
+    export increment-s64: func() -> s64;
+    export decrement-s64: func() -> s64;
+}
+
+world factorial {
+    export factorial: func(n: u64) -> u64;
+}
+
+world identity {
+    export identity: func(value: u64) -> u64;
+}
+
+world proxy-call {
+    import imported: func(a: u32) -> u32;
+    export exported: func(a: u32) -> u32;
+}
+
+world quadratic {
+    export quad-f32: func(a: float32, b: float32, c: float32, x: float32) -> float32;
+    export quad-f32-let: func(a: float32, b: float32, c: float32, x: float32) -> float32;
+    export quad-f64: func(a: float64, b: float64, c: float64, x: float64) -> float64;
+    export quad-f64-let: func(a: float64, b: float64, c: float64, x: float64) -> float64;
+}
+
+world strings {
+    export identity: func(s: string) -> string;
+    export hello-world: func() -> string;
+    export concat: func(left: string, right: string) -> string;
+}
+
+world unary {
+    export set: func(v: s32) -> s32;
+    export get-inverse: func() -> s32;
+}
